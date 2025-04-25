@@ -142,12 +142,12 @@ def setTextIJ(text=" ", i=dim // 2, j=dim // 2, color=Color.Navy, size=16):
 
 def setText(text="O", z=0j, color=Color.Black, size=16):
     # scrie un text pe ecran in dreptul lui z
-    myFont = pygame.font.Font('TimeRomanNormal.ttf', size)
-    textImag = myFont.render(text, True, color)
-    textRect = textImag.get_rect()
+    # myFont = pygame.font.Font('TimeRomanNormal.ttf', size)
+    # textImag = myFont.render(text, True, color)
+    # textRect = textImag.get_rect()
     i, j = _getIJ(z)
-    textRect.center = (i, j - 3 * size // 4)
-    screen.blit(textImag, textRect)
+    # textRect.center = (i, j - 3 * size // 4)
+    # screen.blit(textImag, textRect)
 
 def saveScreenPNG(filename):
     pygame.image.save(screen, filename + ".png")
