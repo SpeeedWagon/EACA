@@ -146,7 +146,7 @@ def Bisectoare():
     R = 2
     C.setXminXmaxYminYmax(-R, R, -R, R)
     n = 3
-  
+    C.setAxis()
     c1 = [k/2+0.2 for k in random.sample(range(-R,R), n)]
     c2 = [k/2+0.5 for k in random.sample(range(-R,R), n)]
     c = [complex(c1[x],c2[x]) for x in range(n)]
@@ -157,7 +157,7 @@ def Bisectoare():
     Iy = (a*c[0].imag + b*c[1].imag + d*c[2].imag) / (a + b + d)
     bis = complex(Ix,Iy)
     C.fillScreen()
-
+    C.setAxis()
     C.drawLine(c[1],c[2],Color.Black)
     C.drawLine(c[0],c[2],Color.Black)
     C.drawLine(c[0],c[1],Color.Black)
@@ -262,4 +262,6 @@ if __name__ == '__main__':
     # C.run(MasterCard)
     # C.run(Nisshoki)
     # TEMA 4
-    C.run(Darts)
+    #TEMA 11
+    # C.run(Darts)
+    C.run(Bisectoare)

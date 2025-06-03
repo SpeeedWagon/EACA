@@ -34,8 +34,7 @@ def JuliaRandom():
                     break
 
             col = Color.White
-            if C.rho(z1) >= rhoMax and C.rho(z2) >= rhoMax \
-                    or C.rho(z1 - z2) < prec:
+            if C.rho(z1) >= rhoMax and C.rho(z2) >= rhoMax or C.rho(z1 - z2) < prec:
                 col = Color.Red
             C.setPixel(zeta, col)
         if C.mustClose():
@@ -56,14 +55,14 @@ def JuliaGreen():
             return (u + c) / (u - c)
 
     C.setXminXmaxYminYmax(-2.7, 3.5, -3.1, 3.1)
-    nrIter = 1000
+    nrIter = 400
     for coloana in C.screenColumns():
         for zeta in coloana:
             z = zeta
             for k in range(nrIter):
                 z = f(z)
                 if C.rho(z) >= rhoMax: break
-            C.setPixel(zeta, Color.Index(sum(C.getHK(z))))
+            C.setPixel(z, Color.Index(sum(C.getHK(z))))
         if C.mustClose():
             return
 
@@ -179,8 +178,8 @@ def JuliaRetro():  # f(z) = z * z + c
 
 if __name__ == '__main__':
     C.initPygame()
-    C.run(JuliaRandom)
-    # C.run(JuliaGreen)
+    # C.run(JuliaRandom)
+    C.run(JuliaGreen)
     # C.run(JuliaPlina)
     # C.run(JuliaNewton)
     # C.run(JuliaRetro)

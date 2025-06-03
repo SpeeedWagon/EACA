@@ -241,6 +241,10 @@ def draw_colored_regions_pixel_by_pixel():
     # cp.setTextIJ("Regions colored by line sides. Spacebar to redraw.", 10, cp.dim - 20, Color.Black, size=12, background=Color.White)
     for z in cp.screenAffixes():
         print(getPixelColor(z))
+
+
+
+
 if __name__ == '__main__':
     cp.initPygame()
     cp.run(draw_colored_regions_pixel_by_pixel)
